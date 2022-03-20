@@ -223,7 +223,7 @@ class KrunchyProvider : MainAPI() {
                 val isPremium = poster?.contains("widestar") == true
                 if (isPremium) {
                 epDesc =  "★ "+epDesc+" ★"
-                } 
+                }
                 
                     
                 
@@ -239,7 +239,7 @@ class KrunchyProvider : MainAPI() {
                 )
                 if (isPremium) {
                 premiumEpisodes.add(epi)
-               } else if (seasonName.contains("Dub") || seasonName.contains("Russian") || seasonName.contains("Spanish")) {
+                } else if (seasonName != null && (seasonName.contains("Dub") || seasonName.contains("Russian") || seasonName.contains("Spanish"))) {
                 dubEpisodes.add(epi)
                } else {
                subEpisodes.add(epi)
