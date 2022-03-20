@@ -231,7 +231,7 @@ class KrunchyProvider : MainAPI() {
                     null,
                     null,
                     epDesc,
-                    epNum?.toIntOrNull()
+                    null
                 )
                 if (seasonName == null) {
                     subEpisodes.add(epi)
