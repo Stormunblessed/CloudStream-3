@@ -237,23 +237,23 @@ class KrunchyProvider : MainAPI() {
                     epDesc,
                     null
                 )
-                if (seasonName == null) {
-                    subEpisodes.add(epi)
-                } else if (seasonName.contains("(HD)")) {
-                    //For one piece premium eps
-                    premiumEpisodes.add(epi)
-                } else if (seasonName.contains("Spanish")) {
-                    dubEpisodes.add(epi)
-                }
-                else if (seasonName.contains("Dub") || seasonName.contains("Russian")) {
-                    dubEpisodes.add(epi)
-                }
-                else if (epDesc.contains("★")) {
-                    premiumEpisodes.add(epi)
-                }
-                else {
-                    subEpisodes.add(epi)
-                }
+                if (isPremium) {
+                premiumEpisodes.add(epi)
+               } else if (seasonName.contains("Dub") || seasonName.contains("Russian") || seasonName.contains("Spanish")) {
+                dubEpisodes.add(epi)
+               } else {
+               subEpisodes.add(epi)
+              } 
+
+                   
+                
+                    
+                    
+                
+                    
+                
+                
+                                                     
             }
         }
         return AnimeLoadResponse(
