@@ -243,17 +243,7 @@ class KrunchyProvider : MainAPI() {
                 dubEpisodes.add(epi)
                } else {
                subEpisodes.add(epi)
-              } 
-
-                   
-                
-                    
-                    
-                
-                    
-                
-                
-                                                     
+              }
             }
         }
         return AnimeLoadResponse(
