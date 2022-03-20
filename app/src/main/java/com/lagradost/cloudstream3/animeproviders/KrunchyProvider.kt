@@ -220,9 +220,13 @@ class KrunchyProvider : MainAPI() {
                 if (poster == "") { poster = poster2}
 
                 var epDesc = (if (epNum == null) "" else "Episode $epNum") + (if (!seasonName.isNullOrEmpty()) " - $seasonName" else "")
-                if (poster?.contains("widestar") == true) {
-                    epDesc =  "★ "+epDesc+" ★"
-                }
+                val isPremium = poster?.contains("widestar") == true
+                if (isPremium) {
+                epDesc =  "★ "+epDesc+" ★"
+                } 
+                
+                    
+                
 
                 val epi = AnimeEpisode(
                     fixUrl(ep.attr("href")),
