@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/debug/res/drawable-anydpi-v24/ic_stat_name.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/debug/res/drawable-v24/ic_banner_foreground.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/debug/res/drawable-v24/ic_launcher_foreground.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/debug/res/mipmap-anydpi-v26/ic_banner.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/debug/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/debug/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/cloud_2.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/cloud_2_gradient.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/cloud_2_gradient_beta.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/cloud_2_gradient_beta_old.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/cloud_2_gradient_debug.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/default_cover.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/dub_bg_color.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2035" />
+        <entry key="..\:/Users/Edison/AndroidStudioProjects/CloudStream-3/app/src/main/res/drawable/netflix_play.xml" value="0.2035" />
         <entry key="..\:/Users/GAH97/IdeaProjects/CloudStream-3-1/app/src/main/res/drawable-v24/ic_banner_foreground.xml" value="0.2972972972972973" />
         <entry key="..\:/Users/GAH97/IdeaProjects/CloudStream-3-1/app/src/main/res/layout/bottom_selection_dialog.xml" value="0.2985008818342152" />
         <entry key="..\:/Users/GAH97/IdeaProjects/CloudStream-3-1/app/src/main/res/layout/fragment_result.xml" value="0.35260416666666666" />
