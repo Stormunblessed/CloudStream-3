@@ -71,7 +71,7 @@ class KrunchyProvider : MainAPI() {
 
     override var mainUrl = "http://www.crunchyroll.com"
     override var name: String = "Crunchyroll"
-    override val lang = "es"
+    override val lang = "en"
     override val hasQuickSearch: Boolean
         get() = false
     override val hasMainPage: Boolean
@@ -220,9 +220,13 @@ class KrunchyProvider : MainAPI() {
                 if (poster == "") { poster = poster2}
 
                 var epDesc = (if (epNum == null) "" else "Episode $epNum") + (if (!seasonName.isNullOrEmpty()) " - $seasonName" else "")
-                if (poster?.contains("widestar") == true) {
-                    epDesc =  "★ "+epDesc+" ★"
+                val isPremium = poster?.contains("widestar") == true
+                if (isPremium) {
+                epDesc =  "★ "+epDesc+" ★"
                 }
+                
+                    
+                
 
                 val epi = AnimeEpisode(
                     fixUrl(ep.attr("href")),
@@ -231,25 +235,15 @@ class KrunchyProvider : MainAPI() {
                     null,
                     null,
                     epDesc,
-                    epNum?.toIntOrNull()
+                    null
                 )
-                if (seasonName == null) {
-                    subEpisodes.add(epi)
-                } else if (seasonName.contains("(HD)")) {
-                    //For one piece premium eps
-                    premiumEpisodes.add(epi)
-                } else if (seasonName.contains("Spanish")) {
-                    dubEpisodes.add(epi)
-                }
-                else if (seasonName.contains("Dub") || seasonName.contains("Russian")) {
-                    dubEpisodes.add(epi)
-                }
-                else if (epDesc.contains("★")) {
-                    premiumEpisodes.add(epi)
-                }
-                else {
-                    subEpisodes.add(epi)
-                }
+                if (isPremium) {
+                premiumEpisodes.add(epi)
+                } else if (seasonName != null && (seasonName.contains("Dub") || seasonName.contains("Russian") || seasonName.contains("Spanish"))) {
+                dubEpisodes.add(epi)
+               } else {
+               subEpisodes.add(epi)
+              }
             }
         }
         return AnimeLoadResponse(
