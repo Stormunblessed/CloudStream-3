@@ -2,12 +2,12 @@
 
 <!-- ![Maintenance](https://img.shields.io/maintenance/yes/2022?color=blue&style=for-the-badge) -->
 ![GitHub release](https://img.shields.io/github/v/release/Stormunblessed/cloudstream-3?sort=semver&style=for-the-badge)
-![Downloads](https://img.shields.io/github/downloads/Stormunblessed/CloudStream-3/total?color=blue&style=for-the-badge)
+![Downloads](https://github.com/KillerDogeEmpire/CloudStream-3/releases/total?color=blue&style=for-the-badge)
 ![Build](https://img.shields.io/github/workflow/status/Stormunblessed/CloudStream-3/Pre-release?style=for-the-badge)
 
 
 **DOWNLOAD:**
-https://github.com/Stormunblessed/CloudStream-3/releases
+https://github.com/KillerDogeEmpire/CloudStream-3/releases
 
 
 ***Features:***
@@ -16,6 +16,10 @@ https://github.com/Stormunblessed/CloudStream-3/releases
 + Bookmarks
 + Download and stream movies, tv-shows and anime
 + Chromecast
+
+***Extra Features:***
++ Crunchyroll provider.
++ More Spanish providers.
 
 ***Screenshots:***
 
@@ -75,7 +79,6 @@ It merely scrapes 3rd-party websites that are publicly accessable via any regula
 - [gogoanime.film](https://gogoanime.film) 
 - [ihavenotv.com](https://ihavenotv.com) 
 - [kdramahood.com](https://kdramahood.com) 
-- [crunchyroll.com](http://www.crunchyroll.com) 
 - [monoschinos2.com](https://monoschinos2.com) 
 - [mundodonghua.com](https://www.mundodonghua.com) 
 - [9anime.center](https://9anime.center) 
