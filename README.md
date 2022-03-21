@@ -2,7 +2,6 @@
 
 <!-- ![Maintenance](https://img.shields.io/maintenance/yes/2022?color=blue&style=for-the-badge) -->
 ![GitHub release](https://img.shields.io/github/v/release/Stormunblessed/cloudstream-3?sort=semver&style=for-the-badge)
-![Downloads](https://github.com/KillerDogeEmpire/CloudStream-3/releases/total?color=blue&style=for-the-badge)
 ![Build](https://img.shields.io/github/workflow/status/Stormunblessed/CloudStream-3/Pre-release?style=for-the-badge)
 
 
