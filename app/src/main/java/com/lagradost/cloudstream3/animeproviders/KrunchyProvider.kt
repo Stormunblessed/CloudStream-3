@@ -71,7 +71,7 @@ class KrunchyProvider : MainAPI() {
 
     override var mainUrl = "http://www.crunchyroll.com"
     override var name: String = "Crunchyroll"
-    override val lang = "es"
+    override val lang = "en"
     override val hasQuickSearch: Boolean
         get() = false
     override val hasMainPage: Boolean
@@ -220,9 +220,13 @@ class KrunchyProvider : MainAPI() {
                 if (poster == "") { poster = poster2}
 
                 var epDesc = (if (epNum == null) "" else "Episode $epNum") + (if (!seasonName.isNullOrEmpty()) " - $seasonName" else "")
-                if (poster?.contains("widestar") == true) {
+                val isPremium = poster?.contains("widestar") == true
+                if (isPremium) {
                     epDesc =  "★ "+epDesc+" ★"
                 }
+
+
+
 
                 val epi = AnimeEpisode(
                     fixUrl(ep.attr("href")),
@@ -231,23 +235,13 @@ class KrunchyProvider : MainAPI() {
                     null,
                     null,
                     epDesc,
-                    epNum?.toIntOrNull()
+                    null
                 )
-                if (seasonName == null) {
-                    subEpisodes.add(epi)
-                } else if (seasonName.contains("(HD)")) {
-                    //For one piece premium eps
+                if (isPremium) {
                     premiumEpisodes.add(epi)
-                } else if (seasonName.contains("Spanish")) {
+                } else if (seasonName != null && (seasonName.contains("Dub") || seasonName.contains("Russian") || seasonName.contains("Spanish"))) {
                     dubEpisodes.add(epi)
-                }
-                else if (seasonName.contains("Dub") || seasonName.contains("Russian")) {
-                    dubEpisodes.add(epi)
-                }
-                else if (epDesc.contains("★")) {
-                    premiumEpisodes.add(epi)
-                }
-                else {
+                } else {
                     subEpisodes.add(epi)
                 }
             }
@@ -343,35 +337,35 @@ class KrunchyProvider : MainAPI() {
                 }
             }
             streams.apmap { stream ->
-              if (stream.url.contains("m3u8") && stream.format!!.contains("adaptive") ) {
-                  hlsHelper.m3u8Generation(M3u8Helper.M3u8Stream(stream.url, null), false).apmap {
+                if (stream.url.contains("m3u8") && stream.format!!.contains("adaptive") ) {
+                    hlsHelper.m3u8Generation(M3u8Helper.M3u8Stream(stream.url, null), false).apmap {
+                        callback(
+                            ExtractorLink(
+                                "Crunchyroll",
+                                "Crunchy - ${stream.title} - ${it.quality}p",
+                                it.streamUrl,
+                                "",
+                                getQualityFromName(it.quality.toString()),
+                                true
+                            )
+                        )
+                    }
+                } else if (stream.format == "trailer_hls") {
+                    val premiumstream = stream.url
+                        .replace("\\/", "/")
+                        .replace(Regex("\\/clipFrom.*?index.m3u8"), "").replace("'_,'", "'_'")
+                        .replace(stream.url.split("/")[2], "fy.v.vrv.co")
                     callback(
                         ExtractorLink(
                             "Crunchyroll",
-                            "Crunchy - ${stream.title} - ${it.quality}p",
-                            it.streamUrl,
+                            "Crunchy - ${stream.title} ★",
+                            premiumstream,
                             "",
-                            getQualityFromName(it.quality.toString()),
-                            true
+                            Qualities.Unknown.value,
+                            false
                         )
                     )
-                }
-              } else if (stream.format == "trailer_hls") {
-                  val premiumstream = stream.url
-                      .replace("\\/", "/")
-                      .replace(Regex("\\/clipFrom.*?index.m3u8"), "").replace("'_,'", "'_'")
-                      .replace(stream.url.split("/")[2], "fy.v.vrv.co")
-                  callback(
-                  ExtractorLink(
-                      "Crunchyroll",
-                      "Crunchy - ${stream.title} ★",
-                      premiumstream,
-                      "",
-                      Qualities.Unknown.value,
-                      false
-                  )
-              )
-              } else null
+                } else null
             }
             json.subtitles.apmap {
                 val langclean = it.language.replace("esLA","Spanish")
